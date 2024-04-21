@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profit Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Ensure proper positioning of the pseudo-element */
+            height: 100vh;
+        }
+        body::before {
+            content: "";
+            background-image: url('https://neurosciencenews.com/files/2023/11/genderr-gap-life-expectancy-neuroscience.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(3px); /* Adjust the blur radius as needed */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1; /* Ensure the pseudo-element is behind other content */
+        }
+        .container {
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.85); /* Adjust the alpha value as needed */
+            border-radius: 50px;
+            padding: 61px;
+            /* margin-left: 180px; */
+            box-shadow: 34px 31px 11px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 91%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        select {
+            width: 98.3%; /* Make the select element fill its container */
+            padding: 10px; /* Add some padding inside the select element */
+            font-size: 14px;
+            border: 1px solid #ccc; /* Add a border to the select element */
+            border-radius: 4px; /* Add rounded corners */
+            background-color: #fff; /* Background color */
+        }
+
+        /* Style for option */
+        option {
+            padding: 8px; /* Add some padding inside the option element */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Life Expectancy Prediction</h2>
+    <form method="post" action="/predict">
+        <label for="input0">Enter Year</label>
+        <input type="number" id="input0" name="input0" required><br><br>
+        <label for="input1">Country status</label>
+        <select id="input1" name="input1" required>
+            <option value="0">Developing</option>
+            <option value="1">Developed</option>
+        </select><br><br>
+        <label for="input2">Adult Mortality Ratio per 1000 [Between 0 to 500]</label>
+        <input type="number" id="input2" name="input2" required><br><br>
+        <label for="input3">GDP [Between 0 to 5000]</label>
+        <input type="number" id="input3" name="input3" required><br><br>
+        <label for="input4">Income Composition of Resource [0 or 1]</label>
+        <input type="number" id="input4" name="input4" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</div>
+
+</body>
+</html>
